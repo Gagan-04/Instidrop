@@ -1,0 +1,52 @@
+﻿{% extends "app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+  <div class="container" data-aos="fade-up">
+
+  <form method="post">
+      {% csrf_token %}
+      <div class="col-md-8 col-md-offset-2">
+          {% if notfound %}
+          <div><p class="btn btn-danger"> No profile found with this Username </p></div>
+          {% endif %}
+                <div class="panel panel-primary">
+                    <div class="panel-heading"><h4>Sign Up </h4></div>
+                    <div class="panel-body">
+                      <div><p style="color:red;font-family:'Times New Roman';font-weight:bold;">*User name is (USN for students ex. 2GP16CS004) /(Faculty ID for faculties ex. GECCS004)</p></div>
+                        {% if error_message %}
+                            <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+                        {% endif %}
+                        </div>
+                    <div style="background-color:lightblue; align-content:center;">
+                   <table class="table table-bordered" style="width:100%">
+                        {{ form.as_table  }}
+                       </table>
+                     </div>
+                  
+                     <div class="col-md-6 col-md-offset-4">
+                           <br />
+                      <button type="submit" class="btn btn-primary">Sign up</button>
+                     </div>
+                  
+                    </div>
+          </div>
+  </form>
+      </div>
+{% endblock %}
+{% block scripts %}
+
+ {% load staticfiles %}
+<script src="{% static 'app/scripts/jquery.validate.min.js' %}"></script>
+ <script src="{% static "assets/vendor/jquery/jquery.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/bootstrap/js/bootstrap.bundle.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/jquery.easing/jquery.easing.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/php-email-form/validate.js" %}" ></script>
+  <script src="{% static "assets/vendor/waypoints/jquery.waypoints.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/counterup/counterup.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/owl.carousel/owl.carousel.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/aos/aos.js" %}" ></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static "assets/js/main.js" %}" ></script>
+{% endblock %}

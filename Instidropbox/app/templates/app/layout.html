@@ -1,0 +1,84 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Insti-DropBox App.</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+    <!--Home page Styles -->
+  <link href="{% static "assets/img/favicon.png" %}" rel="icon">
+  <link href="{% static "assets/img/apple-touch-icon.png" %}" rel="apple-touch-icon">
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,300i,400,400i,600,600i,700,700i|Raleway:300,300i,400,400i,500,500i,600,600i,700,700i|Poppins:300,300i,400,400i,500,500i,600,600i,700,700i" rel="stylesheet">
+
+  <!-- Vendor CSS Files -->
+  {#<link href="{% static "assets/vendor/bootstrap/css/bootstrap.min.css" %}" rel="stylesheet">#}
+  <link href="{% static "assets/vendor/icofont/icofont.min.css" %}" rel="stylesheet">
+  <link href="{% static "assets/vendor/boxicons/css/boxicons.min.css" %}" rel="stylesheet">
+  <link href="{% static "assets/vendor/remixicon/remixicon.css" %}" rel="stylesheet">
+  <link href="{% static "assets/vendor/owl.carousel/assets/owl.carousel.min.css" %}" rel="stylesheet">
+  <link href="{% static "assets/vendor/animate.css/animate.min.css" %}" rel="stylesheet">
+  <link href="{% static "assets/vendor/aos/aos.css" %}" rel="stylesheet">
+
+  <!-- Template Main CSS File -->
+  <link href="{% static "assets/css/style.css" %}" rel="stylesheet">
+   
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">Insti-DropBox</a>
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'mydashboard' %}">My Profile</a></li>
+                    {% endif %}
+                </ul>
+                {% include 'app/loginpartial.html' %}
+            </div>
+        </div>
+    </div>
+
+    <div class="container body-content">
+
+{% block content %}{% endblock %}
+        <hr/>
+        <footer>
+            <p>{{ year }} -Insti-DropBox</p>
+        </footer>
+    </div>
+
+    <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'app/scripts/respond.js' %}"></script>
+     <script src="{% static "assets/vendor/jquery/jquery.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/bootstrap/js/bootstrap.bundle.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/jquery.easing/jquery.easing.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/php-email-form/validate.js" %}" ></script>
+  <script src="{% static "assets/vendor/waypoints/jquery.waypoints.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/counterup/counterup.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/owl.carousel/owl.carousel.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/aos/aos.js" %}" ></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static "assets/js/main.js" %}" ></script>
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

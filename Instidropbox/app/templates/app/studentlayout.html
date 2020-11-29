@@ -1,0 +1,86 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - Insti-DropBox App.</title>
+    {% load staticfiles %}
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/bootstrap.min.css' %}" />
+    <link rel="stylesheet" type="text/css" href="{% static 'app/content/site.css' %}" />
+    <link href="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css" rel="stylesheet">   
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"></script>
+   <link rel="stylesheet" href="http://cdn.datatables.net/1.10.2/css/jquery.dataTables.min.css">
+   <script type="text/javascript" src="http://cdn.datatables.net/1.10.2/js/jquery.dataTables.min.js"></script>
+   <script type="text/javascript" src="http://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <script src="{% static 'app/scripts/modernizr-2.6.2.js' %}"></script>
+  
+</head>
+
+<body>
+    <div class="navbar navbar-inverse navbar-fixed-top">
+        <div class="container">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#side-bar">
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a href="/" class="navbar-brand">Insti-DropBox</a>
+            </div>
+            <div class="navbar-collapse collapse" id="side-bar">
+                <ul class="nav navbar-nav">
+                    <li><a href="{% url 'home' %}">Home</a></li>
+                    <li><a href="{% url 'about' %}">About</a></li>
+                    <li><a href="{% url 'contact' %}">Contact</a></li>
+                    {% if user.is_authenticated %}
+                    <li><a href="{% url 'mydashboard' %}">My Profile</a></li>
+                    {% endif %}
+                </ul>
+                {% include 'app/loginpartial.html' %}
+            </div>
+        </div>
+    </div>
+    <div class="container body-content">
+<div class="container">
+     <div class="panel panel-default form-group">
+         <div class="panel-heading btn-primary" style="background-color:darkorange"><strong>Student Panel</strong></div>
+         <div class="panel-body">
+         {% if error_message %}
+          <p class="bg-danger p-d ml-b">{{ error_message }}</p>
+         {% endif %}
+         
+      <div class="row">
+        <div class="col-sm-3 sidebar-offcanvas" id="sidebar" role="navigation">
+          <div class="list-group">
+         <a href="#" class="list-group-item active btn btn-primary"> My dashboard</a> 
+            <a href="{% url 'mydashboard' %}" class="list-group-item"> <span class="glyphicon glyphicon-folder-close"></span>&nbsp; Profile</a>
+            <a href="{% url 'studentgrievances' %}" class="list-group-item"> <span class="glyphicon glyphicon-folder-open"></span>&nbsp; My Grievances</a>
+            <a href="{% url 'sendgrievance' %}" class="list-group-item"><span class="glyphicon glyphicon-send"></span>&nbsp; Send Grievance</a>
+              <a href="javascript:document.getElementById('logoutForm').submit()" class="list-group-item"><span class="glyphicon glyphicon-log-out"></span>&nbsp;Log out</a>
+              
+          </div>
+        </div>
+        <!--/span-->
+      <div class="col-sm-9">
+     {% block content %}{% endblock %}
+          </div>
+     </div>
+    </div><!--/span-->
+ </div>
+</div><!--/row-->
+
+
+        <hr/>
+        <footer>
+            <p>&copy; {{ year }} -Insti-DropBox</p>
+        </footer>
+    </div>
+
+    <script src="{% static 'app/scripts/jquery-1.10.2.js' %}"></script>
+    <script src="{% static 'app/scripts/bootstrap.js' %}"></script>
+    <script src="{% static 'app/scripts/respond.js' %}"></script>
+{% block scripts %}{% endblock %}
+
+</body>
+</html>

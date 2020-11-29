@@ -1,0 +1,85 @@
+﻿{% extends "app/facultylayout.html" %}
+{% block content %}
+
+    <div class="row">     
+      <form method="post" role="form" enctype="multipart/form-data">
+       {% csrf_token %}
+            <h3 class="control-label">Request Details </h3>
+
+          <div>
+                {% if Success %} 
+                 <p style="color:red"> Saved succesfully  </p>
+                 {% endif %}
+             </div>
+          <<div class="col-lg-8">
+         <div class="form-group">
+              <label for="req_type" class="col-md-4 control-label">Request Type: </label>
+          <div class="col-md-8">
+             <input type="text" class="form-control" name="re_type" value="{{ req.Req_Type }}">
+          </div>
+        </div>
+         
+
+         <div class="form-group">
+          <label for="req_details" class="col-md-4 control-label">Request Details</label>
+          <div class="col-md-8">
+              <textarea name="req_details" class="form-control">{{ req.Req_details }}</textarea>
+          </div>
+        </div>
+      <br />
+         <div class="form-group">
+          <label for="sender_id" class="col-md-4 control-label">Sender ID</label>
+          <div class="col-md-8">
+              {% if req.visibilty_sender_id %}
+             <input type="text" name="sender_id" class="form-control" value="{{ req.sender_id }}" />
+              {% else %}
+              <input type="text" name="sender_id" class="form-control" value="Not Visible" />
+              {% endif %}
+          </div>
+        </div>
+         
+         <div class="form-group">
+          <label for="date_req" class="col-md-4 control-label">Date of Request</label>
+          <div class="col-md-8">          
+              <input type="text" name="date_req" class="form-control" value="{{ req.dateof_request }}"/>
+          </div>
+        </div>
+          <hr />
+         <div class="form-group">
+          <label for="reply" class="col-md-4 control-label" >Reply Details</label>
+          <div class="col-md-8">
+              <textarea name="reply" class="form-control" rows="10" cols="37" maxlength="250">{{ req.reply_details }}</textarea>
+          </div>
+         </div>
+          <hr />
+          <div class="form-group">
+          <label for="reply_doc" class="col-md-4 control-label" >Ref Document</label>
+          <div class="col-md-8">
+              <input type="file" name="rep_doc" class="form-control" />
+              
+          </div>
+         </div>
+          <hr />
+         <div class="form-group">
+          <label for="req_status" class="col-md-4 control-label">Request Status:</label>
+             <div class="col-md-8">
+             <select class="form-control" name="status">
+                 <option>Pending</option>
+                 <option>In Progress</option>
+                 <option>Processed</option>
+             </select>
+                 
+           </div>
+        </div>
+          <hr />
+
+         <div class="col-md-8 col-md-offset-4">
+            <input type="submit" value="Update" class="btn btn-primary">
+        </div>
+         </div>    
+             
+        </form>
+      </div>
+    
+     
+{% endblock  %}

@@ -1,0 +1,287 @@
+<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003" ToolsVersion="4.0">
+  <PropertyGroup>
+    <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
+    <Name>Instidropbox</Name>
+    <RootNamespace>Instidropbox</RootNamespace>
+    <InterpreterId>MSBuild|env1|$(MSBuildProjectFullPath)</InterpreterId>
+  </PropertyGroup>
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <SchemaVersion>2.0</SchemaVersion>
+    <ProjectGuid>d1c0bcfc-39f6-42d4-9c69-fa56a2f05e82</ProjectGuid>
+    <ProjectHome>.</ProjectHome>
+    <ProjectTypeGuids>{5F0BE9CA-D677-4A4D-8806-6076C0FAAD37};{349c5851-65df-11da-9384-00065b846f21};{888888a0-9f3d-457c-b088-3a5042f75d52}</ProjectTypeGuids>
+    <StartupFile>manage.py</StartupFile>
+    <SearchPath>
+    </SearchPath>
+    <WorkingDirectory>.</WorkingDirectory>
+    <WebBrowserUrl>http://localhost</WebBrowserUrl>
+    <LaunchProvider>Django launcher</LaunchProvider>
+    <DjangoSettingsModule>Instidropbox.settings</DjangoSettingsModule>
+    <OutputPath>.</OutputPath>
+    <SuppressCollectPythonCloudServiceFiles>true</SuppressCollectPythonCloudServiceFiles>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <DebugSymbols>true</DebugSymbols>
+    <EnableUnmanagedDebugging>false</EnableUnmanagedDebugging>
+  </PropertyGroup>
+  <ItemGroup>
+    <Compile Include="app\admin.py">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="app\forms.py" />
+    <Compile Include="app\models.py" />
+    <Compile Include="app\tests.py" />
+    <Compile Include="app\views.py" />
+    <Compile Include="app\__init__.py" />
+    <Compile Include="app\migrations\__init__.py" />
+    <Compile Include="manage.py" />
+    <Compile Include="Instidropbox\__init__.py" />
+    <Compile Include="Instidropbox\settings.py" />
+    <Compile Include="Instidropbox\urls.py" />
+    <Compile Include="Instidropbox\wsgi.py" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="app\" />
+    <Folder Include="app\migrations\" />
+    <Folder Include="app\static\" />
+    <Folder Include="app\static\app\" />
+    <Folder Include="app\static\app\content\" />
+    <Folder Include="app\static\app\fonts\" />
+    <Folder Include="app\static\app\scripts\" />
+    <Folder Include="app\static\assets\" />
+    <Folder Include="app\static\assets\css\" />
+    <Folder Include="app\static\assets\img\" />
+    <Folder Include="app\static\assets\img\testimonials\" />
+    <Folder Include="app\static\assets\img\trainers\" />
+    <Folder Include="app\static\assets\js\" />
+    <Folder Include="app\static\assets\vendor\" />
+    <Folder Include="app\static\assets\vendor\animate.css\" />
+    <Folder Include="app\static\assets\vendor\aos\" />
+    <Folder Include="app\static\assets\vendor\bootstrap\" />
+    <Folder Include="app\static\assets\vendor\bootstrap\css\" />
+    <Folder Include="app\static\assets\vendor\bootstrap\js\" />
+    <Folder Include="app\static\assets\vendor\boxicons\" />
+    <Folder Include="app\static\assets\vendor\boxicons\css\" />
+    <Folder Include="app\static\assets\vendor\boxicons\fonts\" />
+    <Folder Include="app\static\assets\vendor\counterup\" />
+    <Folder Include="app\static\assets\vendor\icofont\" />
+    <Folder Include="app\static\assets\vendor\icofont\fonts\" />
+    <Folder Include="app\static\assets\vendor\jquery.easing\" />
+    <Folder Include="app\static\assets\vendor\jquery\" />
+    <Folder Include="app\static\assets\vendor\owl.carousel\" />
+    <Folder Include="app\static\assets\vendor\owl.carousel\assets\" />
+    <Folder Include="app\static\assets\vendor\php-email-form\" />
+    <Folder Include="app\static\assets\vendor\remixicon\" />
+    <Folder Include="app\static\assets\vendor\waypoints\" />
+    <Folder Include="app\templates\" />
+    <Folder Include="app\templates\app\" />
+    <Folder Include="Instidropbox\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="app\static\assets\css\style.css" />
+    <Content Include="app\static\assets\img\about.jpg" />
+    <Content Include="app\static\assets\img\apple-touch-icon.png" />
+    <Content Include="app\static\assets\img\course-1.jpg" />
+    <Content Include="app\static\assets\img\course-2.jpg" />
+    <Content Include="app\static\assets\img\course-3.jpg" />
+    <Content Include="app\static\assets\img\course-details-tab-1.png" />
+    <Content Include="app\static\assets\img\course-details-tab-2.png" />
+    <Content Include="app\static\assets\img\course-details-tab-3.png" />
+    <Content Include="app\static\assets\img\course-details-tab-4.png" />
+    <Content Include="app\static\assets\img\course-details-tab-5.png" />
+    <Content Include="app\static\assets\img\course-details.jpg" />
+    <Content Include="app\static\assets\img\events-1.jpg" />
+    <Content Include="app\static\assets\img\events-2.jpg" />
+    <Content Include="app\static\assets\img\favicon.png" />
+    <Content Include="app\static\assets\img\hero-bg.jpg" />
+    <Content Include="app\static\assets\img\testimonials\testimonials-1.jpg" />
+    <Content Include="app\static\assets\img\testimonials\testimonials-2.jpg" />
+    <Content Include="app\static\assets\img\testimonials\testimonials-3.jpg" />
+    <Content Include="app\static\assets\img\testimonials\testimonials-4.jpg" />
+    <Content Include="app\static\assets\img\testimonials\testimonials-5.jpg" />
+    <Content Include="app\static\assets\img\trainers\trainer-1.jpg" />
+    <Content Include="app\static\assets\img\trainers\trainer-2.jpg" />
+    <Content Include="app\static\assets\img\trainers\trainer-3.jpg" />
+    <Content Include="app\static\assets\js\main.js" />
+    <Content Include="app\static\assets\vendor\animate.css\animate.compat.css" />
+    <Content Include="app\static\assets\vendor\animate.css\animate.css" />
+    <Content Include="app\static\assets\vendor\animate.css\animate.min.css" />
+    <Content Include="app\static\assets\vendor\aos\aos.css" />
+    <Content Include="app\static\assets\vendor\aos\aos.js" />
+    <Content Include="app\static\assets\vendor\bootstrap\css\bootstrap-grid.css" />
+    <Content Include="app\static\assets\vendor\bootstrap\css\bootstrap-grid.css.map" />
+    <Content Include="app\static\assets\vendor\bootstrap\css\bootstrap-grid.min.css" />
+    <Content Include="app\static\assets\vendor\bootstrap\css\bootstrap-grid.min.css.map" />
+    <Content Include="app\static\assets\vendor\bootstrap\css\bootstrap-reboot.css" />
+    <Content Include="app\static\assets\vendor\bootstrap\css\bootstrap-reboot.css.map" />
+    <Content Include="app\static\assets\vendor\bootstrap\css\bootstrap-reboot.min.css" />
+    <Content Include="app\static\assets\vendor\bootstrap\css\bootstrap-reboot.min.css.map" />
+    <Content Include="app\static\assets\vendor\bootstrap\css\bootstrap.css" />
+    <Content Include="app\static\assets\vendor\bootstrap\css\bootstrap.css.map" />
+    <Content Include="app\static\assets\vendor\bootstrap\css\bootstrap.min.css" />
+    <Content Include="app\static\assets\vendor\bootstrap\css\bootstrap.min.css.map" />
+    <Content Include="app\static\assets\vendor\bootstrap\js\bootstrap.bundle.js" />
+    <Content Include="app\static\assets\vendor\bootstrap\js\bootstrap.bundle.js.map" />
+    <Content Include="app\static\assets\vendor\bootstrap\js\bootstrap.bundle.min.js" />
+    <Content Include="app\static\assets\vendor\bootstrap\js\bootstrap.bundle.min.js.map" />
+    <Content Include="app\static\assets\vendor\bootstrap\js\bootstrap.js" />
+    <Content Include="app\static\assets\vendor\bootstrap\js\bootstrap.js.map" />
+    <Content Include="app\static\assets\vendor\bootstrap\js\bootstrap.min.js" />
+    <Content Include="app\static\assets\vendor\bootstrap\js\bootstrap.min.js.map" />
+    <Content Include="app\static\assets\vendor\boxicons\css\animations.css" />
+    <Content Include="app\static\assets\vendor\boxicons\css\boxicons.css" />
+    <Content Include="app\static\assets\vendor\boxicons\css\boxicons.min.css" />
+    <Content Include="app\static\assets\vendor\boxicons\css\transformations.css" />
+    <Content Include="app\static\assets\vendor\boxicons\fonts\boxicons.eot" />
+    <Content Include="app\static\assets\vendor\boxicons\fonts\boxicons.svg" />
+    <Content Include="app\static\assets\vendor\boxicons\fonts\boxicons.ttf" />
+    <Content Include="app\static\assets\vendor\boxicons\fonts\boxicons.woff" />
+    <Content Include="app\static\assets\vendor\boxicons\fonts\boxicons.woff2" />
+    <Content Include="app\static\assets\vendor\counterup\counterup.min.js" />
+    <Content Include="app\static\assets\vendor\icofont\fonts\icofont.woff" />
+    <Content Include="app\static\assets\vendor\icofont\fonts\icofont.woff2" />
+    <Content Include="app\static\assets\vendor\icofont\icofont.min.css" />
+    <Content Include="app\static\assets\vendor\jquery.easing\jquery.easing.min.js" />
+    <Content Include="app\static\assets\vendor\jquery\jquery.min.js" />
+    <Content Include="app\static\assets\vendor\jquery\jquery.min.map" />
+    <Content Include="app\static\assets\vendor\owl.carousel\assets\ajax-loader.gif" />
+    <Content Include="app\static\assets\vendor\owl.carousel\assets\owl.carousel.css" />
+    <Content Include="app\static\assets\vendor\owl.carousel\assets\owl.carousel.min.css" />
+    <Content Include="app\static\assets\vendor\owl.carousel\assets\owl.theme.default.css" />
+    <Content Include="app\static\assets\vendor\owl.carousel\assets\owl.theme.default.min.css" />
+    <Content Include="app\static\assets\vendor\owl.carousel\assets\owl.theme.green.css" />
+    <Content Include="app\static\assets\vendor\owl.carousel\assets\owl.theme.green.min.css" />
+    <Content Include="app\static\assets\vendor\owl.carousel\assets\owl.video.play.png" />
+    <Content Include="app\static\assets\vendor\owl.carousel\LICENSE" />
+    <Content Include="app\static\assets\vendor\owl.carousel\owl.carousel.js" />
+    <Content Include="app\static\assets\vendor\owl.carousel\owl.carousel.min.js" />
+    <Content Include="app\static\assets\vendor\owl.carousel\README.md" />
+    <Content Include="app\static\assets\vendor\php-email-form\validate.js" />
+    <Content Include="app\static\assets\vendor\remixicon\remixicon.css" />
+    <Content Include="app\static\assets\vendor\remixicon\remixicon.eot" />
+    <Content Include="app\static\assets\vendor\remixicon\remixicon.glyph.json" />
+    <Content Include="app\static\assets\vendor\remixicon\remixicon.less" />
+    <Content Include="app\static\assets\vendor\remixicon\remixicon.svg" />
+    <Content Include="app\static\assets\vendor\remixicon\remixicon.symbol.svg" />
+    <Content Include="app\static\assets\vendor\remixicon\remixicon.ttf" />
+    <Content Include="app\static\assets\vendor\remixicon\remixicon.woff" />
+    <Content Include="app\static\assets\vendor\remixicon\remixicon.woff2" />
+    <Content Include="app\static\assets\vendor\waypoints\jquery.waypoints.min.js" />
+    <Content Include="app\templates\app\deptgrievances.html" />
+    <Content Include="app\templates\app\editstudentreq.html" />
+    <Content Include="app\templates\app\facultylayout.html" />
+    <Content Include="app\templates\app\facultypanel.html" />
+    <Content Include="app\templates\app\f_updatereq.html" />
+    <Content Include="app\templates\app\index2.html" />
+    <Content Include="app\templates\app\sendgrievance.html" />
+    <Content Include="app\templates\app\studentgrievances.html" />
+    <Content Include="app\templates\app\studentlayout.html" />
+    <Content Include="app\templates\app\studentpanel.html" />
+    <Content Include="app\templates\app\f_viewgrievances.html" />
+    <Content Include="app\templates\app\viewfaculty.html" />
+    <Content Include="app\templates\app\viewstudent.html" />
+    <Content Include="app\templates\sign_up.html" />
+    <Content Include="app\templates\app\updatereq.html" />
+    <Content Include="requirements.txt" />
+    <Content Include="db.sqlite3" />
+    <Content Include="app\static\app\content\bootstrap.css" />
+    <Content Include="app\static\app\content\bootstrap.min.css" />
+    <Content Include="app\static\app\content\site.css" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.eot" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.svg" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.ttf" />
+    <Content Include="app\static\app\fonts\glyphicons-halflings-regular.woff" />
+    <Content Include="app\static\app\scripts\bootstrap.js" />
+    <Content Include="app\static\app\scripts\bootstrap.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.intellisense.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.js" />
+    <Content Include="app\static\app\scripts\jquery-1.10.2.min.map" />
+    <Content Include="app\static\app\scripts\jquery.validate-vsdoc.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.min.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.js" />
+    <Content Include="app\static\app\scripts\jquery.validate.unobtrusive.min.js" />
+    <Content Include="app\static\app\scripts\modernizr-2.6.2.js" />
+    <Content Include="app\static\app\scripts\respond.js" />
+    <Content Include="app\static\app\scripts\respond.min.js" />
+    <Content Include="app\static\app\scripts\_references.js" />
+    <Content Include="app\templates\app\about.html" />
+    <Content Include="app\templates\app\contact.html" />
+    <Content Include="app\templates\app\index.html" />
+    <Content Include="app\templates\app\layout.html" />
+    <Content Include="app\templates\app\login.html" />
+    <Content Include="app\templates\app\loginpartial.html" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="readme.html">
+      <SubType>WebBrowser</SubType>
+    </None>
+  </ItemGroup>
+  <ItemGroup>
+    <Interpreter Include="env1\">
+      <Id>env1</Id>
+      <Version>3.7</Version>
+      <Description>env1 (Python 3.7 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+    <Interpreter Include="env\">
+      <Id>env</Id>
+      <Version>3.6</Version>
+      <Description>env (Python 3.6 (64-bit))</Description>
+      <InterpreterPath>Scripts\python.exe</InterpreterPath>
+      <WindowsInterpreterPath>Scripts\pythonw.exe</WindowsInterpreterPath>
+      <PathEnvironmentVariable>PYTHONPATH</PathEnvironmentVariable>
+      <Architecture>X64</Architecture>
+    </Interpreter>
+  </ItemGroup>
+  <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v$(VisualStudioVersion)\Python Tools\Microsoft.PythonTools.Django.targets" />
+  <!-- Specify pre- and post-build commands in the BeforeBuild and 
+       AfterBuild targets below. -->
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  <ProjectExtensions>
+    <VisualStudio>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}">
+        <WebProjectProperties>
+          <AutoAssignPort>True</AutoAssignPort>
+          <UseCustomServer>True</UseCustomServer>
+          <CustomServerUrl>http://localhost</CustomServerUrl>
+          <SaveServerSettingsInUserFile>False</SaveServerSettingsInUserFile>
+        </WebProjectProperties>
+      </FlavorProperties>
+      <FlavorProperties GUID="{349c5851-65df-11da-9384-00065b846f21}" User="">
+        <WebProjectProperties>
+          <StartPageUrl>
+          </StartPageUrl>
+          <StartAction>CurrentPage</StartAction>
+          <AspNetDebugging>True</AspNetDebugging>
+          <SilverlightDebugging>False</SilverlightDebugging>
+          <NativeDebugging>False</NativeDebugging>
+          <SQLDebugging>False</SQLDebugging>
+          <ExternalProgram>
+          </ExternalProgram>
+          <StartExternalURL>
+          </StartExternalURL>
+          <StartCmdLineArguments>
+          </StartCmdLineArguments>
+          <StartWorkingDirectory>
+          </StartWorkingDirectory>
+          <EnableENC>False</EnableENC>
+          <AlwaysStartWebServerOnDebug>False</AlwaysStartWebServerOnDebug>
+        </WebProjectProperties>
+      </FlavorProperties>
+    </VisualStudio>
+  </ProjectExtensions>
+</Project>

@@ -1,0 +1,76 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+{% load staticfiles %}
+<!-- ======= Hero Section ======= -->
+  <main id="main">
+
+    <!-- ======= About Section ======= -->
+    <section id="about" class="about">
+      <div class="container" data-aos="fade-up">
+
+        <div class="section-title">
+          <h2>About</h2>
+          <p>About Application Design</p>
+        </div>
+
+        <div class="row">
+          <div class="col-lg-6 order-1 order-lg-2" data-aos="fade-left" data-aos-delay="100">
+            <img src="{% static "/assets/img/about.jpg" %}" class="img-fluid" alt="" width="500" height="400"/>
+          </div>
+          <div class="col-lg-6 pt-4 pt-lg-0 order-2 order-lg-1 content">
+            <h3>This application has been designed by using Django Framework version 1.11</h3>
+            <p class="font-italic">
+               Django gives you a powerful, patterns-based way to build dynamic websites that
+               enables a clean separation of concerns and gives you full control over markup
+               for enjoyable, agile development.
+            </p>
+            <ul>
+              <li><i class="icofont-check-circled"></i> Django fallows MTV ( Model Template View ) Model </li>
+              <li><i class="icofont-check-circled"></i>Language Used:Python 3.6 Object Oriented Programming Language </li>
+              <li><i class="icofont-check-circled"></i>Backend Data Base: Sqlite3 </li>
+              <li><i class="icofont-check-circled"></i>Tool Used: Visual Studio 2017 </li>
+            </ul>
+            <p>
+              <a class="learn-more-btn" href="http://www.djangobook.com/en/2.0/index.html">Learn more &raquo;</a>
+            </p>
+               {#<a href="{% url 'login' %}" class="learn-more-btn">Login</a>#}
+          </div>
+        </div>
+
+      </div>
+    </section><!-- End About Section -->
+
+
+ 
+
+    <!-- ======= Features Section ======= -->
+    <!-- End Features Section -->
+
+    
+
+ 
+  </main><!-- End #main -->
+
+  <!-- ======= Footer ======= -->
+  
+
+  <a href="#" class="back-to-top"><i class="bx bx-up-arrow-alt"></i></a>
+  <div id="preloader"></div>
+
+ 
+{% endblock %}
+{% block scripts %}
+ <!-- Vendor JS Files -->
+  <script src="{% static "assets/vendor/jquery/jquery.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/bootstrap/js/bootstrap.bundle.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/jquery.easing/jquery.easing.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/php-email-form/validate.js" %}" ></script>
+  <script src="{% static "assets/vendor/waypoints/jquery.waypoints.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/counterup/counterup.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/owl.carousel/owl.carousel.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/aos/aos.js" %}" ></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static "assets/js/main.js" %}" ></script>
+{% endblock%}

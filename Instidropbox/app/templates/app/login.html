@@ -1,0 +1,62 @@
+{% extends "app/layout.html" %}
+
+{% block content %}
+ {% load staticfiles %}
+<h2>{{ title }}</h2>
+<div class="row">
+    <div class="col-md-8 col-md-offset-2" >
+        <div class="container" data-aos="fade-up">
+        <section id="loginForm">
+            <form action="." method="post" class="form-horizontal">
+                {% csrf_token %}
+                <h4>Use a local account to log in.</h4>
+                <hr />
+                <div class="form-group">
+                    <label for="id_username" class="col-md-2 control-label">User name</label>
+                    <div class="col-md-10">
+                        {{ form.username }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <label for="id_password" class="col-md-2 control-label">Password</label>
+                    <div class="col-md-10">
+                        {{ form.password }}
+                    </div>
+                </div>
+                <div class="form-group">
+                    <div class="col-md-offset-2 col-md-10">
+                        <input type="hidden" name="next" value="/" />
+                        <input type="submit" value="Log in" class="btn btn-default" />
+                    </div>
+                </div>
+                {% if form.errors %}
+                <p class="validation-summary-errors">Please enter a correct user name and password.</p>
+                {% endif %}
+            </form>
+        </section>
+    </div>
+    <div class="col-md-4">
+        <section id="socialLoginForm"></section>
+    </div>
+        </div>
+</div>
+
+{% endblock %}
+
+
+{% block scripts %}
+
+    {% load staticfiles %}
+<script src="{% static 'app/scripts/jquery.validate.min.js' %}"></script>
+ <script src="{% static "assets/vendor/jquery/jquery.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/bootstrap/js/bootstrap.bundle.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/jquery.easing/jquery.easing.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/php-email-form/validate.js" %}" ></script>
+  <script src="{% static "assets/vendor/waypoints/jquery.waypoints.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/counterup/counterup.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/owl.carousel/owl.carousel.min.js" %}" ></script>
+  <script src="{% static "assets/vendor/aos/aos.js" %}" ></script>
+
+  <!-- Template Main JS File -->
+  <script src="{% static "assets/js/main.js" %}" ></script>
+{% endblock %}

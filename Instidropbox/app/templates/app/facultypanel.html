@@ -1,0 +1,89 @@
+﻿
+{% extends "app/facultylayout.html" %}
+
+{% block content %}
+
+    <form class="form-horizontal" method="post" action="{% url 'mydashboard' %}" role="form"> 
+    {% csrf_token %}
+    <div class="col-lg-8 col-sm-2">    
+        <div class="form-group">
+          <label for="username" class="col-md-4 control-label">User Name:</label>
+          <div class="col-md-6">
+            <input type="text" class="form-control" id="u_name" value="{{ staff.Faculty_Id }}" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="fName" class="col-md-4 control-label">Faculty name:</label>
+          <div class="col-md-8">
+            <input type="text" class="form-control" name="f_fname" value="{{ staff.Faculty_Name }}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="Department" class="col-md-4 control-label">Department:</label>
+          <div class="col-md-8">
+            <input type="text" class="form-control" id="f_Dept" name="f_Dept" value="{{ staff.Department }}" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="Designation" class="col-md-4 control-label">Designation:</label>
+          <div class="col-md-8">
+            <input type="text" class="form-control" id="f_Desi"  name="f_Desi" value="{{ staff.Designation }}" disabled>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="Experience" class="col-md-4 control-label">Experience:</label>
+          <div class="col-md-8">
+            <input type="number" class="form-control" min="0" id="f_Exp" name="f_Exp" value="{{ staff.Experience }}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="Achievements" class="col-md-4 control-label">Achievements:</label>
+          <div class="col-md-8">
+            <input type="text" class="form-control" maxlength="250" id="f_Achiev" name="f_Achiev" value="{{ staff.Achievements }}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="Message" class="col-md-4 control-label">Message to students:</label>
+          <div class="col-md-8">
+              {#<textarea name="f_Msg" id="f_Msg" cols="37" rows="5" v>{{ staff.Message }} </textarea>#}
+            <input type="text" class="form-control" maxlength="250" id="f_Msg" name="f_Msg" value="{{ staff.Message }}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="Contact" class="col-md-4 control-label">Contact:</label>
+          <div class="col-md-8">
+            <input type="text" class="form-control" maxlength="12" id="f_contact" name="f_contact" value="{{ staff.Contact }}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="E_Mail" class="col-md-4 control-label">E Mail</label>
+          <div class="col-md-8">
+            <input type="email" class="form-control" id="f_email" name="f_email" value="{{ staff.Email }}">
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="" class="col-md-4 control-label">Place:</label>
+          <div class="col-md-8">
+            <input type="Place" class="form-control" id="f_place" name="f_place" value="{{ staff.Place }}">
+          </div>
+        </div>
+              <div class="col-md-8 col-md-offset-4">
+                <input type="submit" value="Update" class="btn btn-primary">
+            </div>
+                
+   </div>
+      <div class="col-md-4">
+       
+       <div class="panel-body">
+           {% if staff.Photo %}
+       <p><img src="{{ staff.Photo.url }}" style="width:125px;height:125px"/></p>
+            {% endif %}
+       </div>
+      
+
+    </div>  
+         <!-- /.row this actually does not appear to be needed with the form-horizontal -->
+  </form> 
+
+
+{% endblock %}

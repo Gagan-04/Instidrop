@@ -1,0 +1,116 @@
+﻿{% extends "app/studentlayout.html" %}
+
+{% block content %}
+<div>
+    <form class="form-horizontal" method="post"> 
+    {% csrf_token %}
+    <div class="col-lg-8 col-sm-2">
+      <h3>Request Form</h3> 
+       {% if Success %}
+        <div class="btn btn-sm btn-success"><p style="align-content:center"> Updated Successfully </p></div>
+        {% endif %}
+         <div class="form-group">
+          <label for="req_type" class="col-md-4 control-label">Request Type</label>
+          <div class="col-md-6">           
+            <input type="text" class="form-control" name="req_type" value="{{ req.Req_Type }}" >
+          </div>
+        </div>
+         <div class="form-group">
+          <label for="req_details" class="col-md-4 control-label">Request Details</label>
+          <div class="col-md-8"> 
+             <textarea  class="form-control" name="req_details" rows="10" cols="37" maxlength="250">{{ req.Req_details }}</textarea>
+          </div>
+        </div>
+         
+         <div class="form-group">
+          <label for="receiver" class="col-md-4 control-label">Faculty</label>
+          <div class="col-md-6">
+           <input type="text" name="receiver_id" class="form-control" value="{{ req.receiver_id }}"  maxlength="10" id="id_receiver_id"/>
+          </div>
+        </div>
+         
+         <div class="row">          
+         <div class="form-group">
+          <label for="visibilty_sender_id" class="col-md-4 control-label">Visibile:</label>
+          <div class="col-sm-4">
+              <input type="checkbox" name="visible_sender_id"/>
+          </div>
+        </div>
+       <div class="form-group">
+          <label for="visible_to_Hod" class="col-md-4 control-label">Visible To HOD:</label>
+          <div class="col-sm-4">
+            <input type="checkbox" name="visible_to_Hod"/>
+          </div>
+        </div>
+        <div class="form-group">
+          <label for="visible_to_Principal" class="col-md-4 control-label">Visibile to principal:</label>
+          <div class="col-sm-4">
+            <input type="checkbox" name="visible_to_Principal"/>
+          </div>
+        </div>
+        </div>
+        <div class="col-md-8 col-md-offset-4">
+            <input type="submit" value="Submit" class="btn btn-primary">
+        </div>
+                
+   </div>
+       
+    <div class="col-md-4">
+       <div class="panel panel-default form-group">
+         <div class="panel-heading btn-primary"><strong>Faculties:</strong> 
+           <select id="f_faculty" class="btn btn-primary">
+               <option value="CSE">CSE
+               </option>
+               <option value="ENC">ENC
+               </option>
+               <option value="MECH">MECH
+               </option>
+               <option value="Civil">Civil
+               </option>
+               <option value="ENE">ENE
+               </option>
+           </select>
+           </div>
+         <div class="panel-body">
+        {% for f in faculty  %}
+        <ul class="list-group">
+            <li class="list-group-item">
+               <input type="radio" name="staff" value="{{ f.Faculty_Id }}" onclick="if (this.checked) { bind(this.value)}"><a href="/sendgrievance/{{ f.id }}" class="control-label">{{ f.Faculty_Name }}-{{ f.Faculty_Id }}</a>
+            </li>
+        </ul> 
+        {% endfor %}
+             </div>
+           </div>
+
+    </div>
+                <!-- /.row this actually does not appear to be needed with the form-horizontal -->
+  </form> 
+</div>
+<div class="modal fade" id="myModal" role="dialog">
+    <div class="modal-dialog">
+    
+      <!-- Modal content-->
+      <div class="modal-content">
+        <div class="modal-header">
+          <button type="button" class="close" data-dismiss="modal">&times;</button>
+          <h4 class="modal-title">Modal Header</h4>
+        </div>
+        <div class="modal-body">
+           <p>Need to display faculty details</p>
+          
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+<script>
+    function bind(id) {
+        document.getElementById("id_receiver_id").value = id;
+    }
+</script>
+
+{% endblock %}
